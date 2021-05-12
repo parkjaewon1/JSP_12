@@ -4,7 +4,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="common.css">
 </head><body>
-<form action="check_model1.jsp">
+<form action="IdCheckController">
 <table><caption>로그인</caption>
 	<tr><th>아이디</th><td><input type="text" name="id" required="required"
 		autofocus="autofocus"></td></tr>
