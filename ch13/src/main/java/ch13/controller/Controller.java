@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import ch13.service.CommandProcess;
-@WebServlet(urlPatterns="*.do",
+@WebServlet(urlPatterns="*.do",	
 	initParams={@WebInitParam(name="config",value="/WEB-INF/command.properties")})
 public class Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -40,7 +40,7 @@ public class Controller extends HttpServlet {
 	          if (f != null) try { f.close(); } catch(IOException ex) {}
 	     }
 	     Iterator<Object> keyIter = pr.keySet().iterator();
-	     // message.do
+	     // message.do, color.do
 	     while( keyIter.hasNext() ) {
 	          String command = (String)keyIter.next(); 
 	          // command : message.do
@@ -79,7 +79,7 @@ public class Controller extends HttpServlet {
 	          // view는 "message.jsp" 문자
 	    } catch(Throwable e) { throw new ServletException(e); } 
 	    RequestDispatcher dispatcher =
-	      	request.getRequestDispatcher(view);
+	      	request.getRequestDispatcher("main.jsp?pgm="+view);
 	   dispatcher.forward(request, response);
 	}
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
